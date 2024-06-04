@@ -25,7 +25,13 @@ To get started with this Laravel Docker project, follow these steps:
    cd laravel-docker-kickstart
    ```
 
-3. Run the Docker containers:
+3. Copy the example environment configuration file to create your own .env file:
+    
+    ```
+    cp .env.example .env   
+    ```
+
+4. Run the Docker containers:
 
    ```
    docker-compose up -d
@@ -33,12 +39,11 @@ To get started with this Laravel Docker project, follow these steps:
 
    This command starts the Docker containers in detached mode, allowing them to run in the background.
 
-4. Access your Laravel application in the browser:
+5. Access your Laravel application in the browser:
+   - Laravel Application: http://localhost:8000
+   - phpMyAdmin: http://localhost:8080
 
-   - Laravel Application: [http://localhost:8000]
-   - phpMyAdmin: [http://localhost:8080]
-
-5. Start developing your Laravel application!
+6. Start developing your Laravel application!
 
 ## Services
 
@@ -59,7 +64,7 @@ This project includes a Makefile with common tasks for Laravel development. Here
 - **Run Laravel tests**: `make test`
 - **Clear content of daily Laravel log files**: `make clear-log`
 - **Delete daily Laravel log files**: `make del-log`
-- **Run all common tasks**: `make all`
+- **Run config, cache, view clear**: `make clear`
 
 ## Directory Structure
 
