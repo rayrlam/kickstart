@@ -1,0 +1,62 @@
+version: "3.9"
+services:
+
+  # PHP Service
+  php:
+    build: 
+      context: .
+      target: php
+      args:
+        - APP_ENV=${APP_ENV}
+    container_name: php
+    environment:
+      - APP_ENV=${APP_ENV}
+      - CONTAINER_ROLE=app
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    ports:
+      - 8000:8000
+    depends_on:
+      - database
+    # - redis
+    command: ["php", "artisan", "serve", "--port=8000", "--host=0.0.0.0", "--env=.env"]
+
+  # Database
+  database: 
+    container_name: mysql
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${DB_DATABASE}
+    volumes:
+      - db-data:/var/lib/mysql
+
+ # phpMyAdmin Service
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      - PMA_HOST=database
+      - MYSQL_ROOT_PASSWORD=${DB_DATABASE}
+    ports:
+      - 8080:80
+    depends_on:
+      - database
+  
+  # Redis Service
+  redis:
+    container_name: redis
+    image: redis:latest
+    ports:
+      - 6379:6379
+    volumes:
+      - redis-data:/data
+
+volumes:
+  db-data: 
+  redis-data:
