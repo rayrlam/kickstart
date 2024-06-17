@@ -39,11 +39,27 @@ To get started with this Laravel Docker project, follow these steps:
 
    This command starts the Docker containers in detached mode, allowing them to run in the background.
 
-5. Access your Laravel application in the browser:
+5. Install the dependencies: 
+
+   ```
+   docker-compose exec php composer install
+   ```
+6. Run the database migrations:
+   
+   ```
+   docker-compose exec php php artisan migrate
+   ```
+   This command sets up your database tables based on your Laravel migrations.
+
+7. Access your Laravel application in the browser:
    - Laravel Application: http://localhost:8000
    - phpMyAdmin: http://localhost:8080
 
-6. Start developing your Laravel application!
+8. Start developing your Laravel application!
+
+   ```
+   Enjoy your Laravel Docker project!
+   ```
 
 ## Services
 
@@ -53,6 +69,7 @@ This Laravel Docker project includes the following services:
 - **MySQL**: MySQL database server
 - **phpMyAdmin**: Web-based MySQL administration tool
 - **Redis**: Redis server for caching and session management
+- **Online Users Counting with Redis**: Includes a feature to count the number of online users who have been active in the last 5 minutes. This is achieved using Redis to store unique user activity records with a Time to Live (TTL) of 5 minutes.
 
 ## Using the Makefile
 
