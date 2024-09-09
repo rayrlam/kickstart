@@ -1,6 +1,6 @@
 # Laravel 11 Docker Kickstart
 ![Laravel](https://img.shields.io/badge/Laravel-^11.9-blue)
-![PHP](https://img.shields.io/badge/PHP-^8.2-yellow)
+![PHP](https://img.shields.io/badge/PHP-^8.3.11-yellow)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 This repository provides a kickstart template for starting a Laravel 11 project with Docker. It includes services for PHP, MySQL, phpMyAdmin, and Redis, allowing for easy development and testing of your Laravel application.
