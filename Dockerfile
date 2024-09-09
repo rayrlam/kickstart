@@ -1,5 +1,5 @@
 # Use PHP 8.3 as the base image
-FROM php:8.3 as php
+FROM php:8.3.11 as php
 
 # Define build arguments for UID and username
 ARG uid=1000
