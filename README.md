@@ -1,5 +1,5 @@
 # Laravel 11 Docker Kickstart
-![Laravel](https://img.shields.io/badge/Laravel-^11.9-blue)
+![Laravel](https://img.shields.io/badge/Laravel-^11.29.0-blue)
 ![PHP](https://img.shields.io/badge/PHP-^8.3.11-yellow)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
