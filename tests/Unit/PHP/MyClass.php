@@ -9,9 +9,9 @@ class MyClass {
     public const DB_HOST = 'localhost';
     public const DB_USER = 'root';
 
-    public function greet(string $name): string
+    public function greet(string $first_name, string $last_name): string
     {
-        return "Hello, $name!";
+        return "Hello, $first_name $last_name!";
     }
 
     public function processInput(string|int $input): string|int

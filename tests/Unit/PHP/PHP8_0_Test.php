@@ -13,7 +13,8 @@ class PHP8_0_Test extends TestCase
 
     public function test_named_arguments()
     {
-        $this->assertEquals('Hello, World!',  (new MyClass())->greet(name: 'World'));
+        $this->assertEquals('Hello, John Doe!',  (new MyClass())->greet(first_name: 'John', last_name: 'Doe'));
+        $this->assertEquals('Hello, John Doe!',  (new MyClass())->greet(last_name: 'Doe', first_name: 'John'));
     }
 
     public function test_union_types()
